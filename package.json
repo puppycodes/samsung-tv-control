@@ -1,0 +1,76 @@
+{
+  "name": "samsung-tv-control",
+  "version": "1.12.4",
+  "description": "Remote your tv via JS!",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "test": "jest --silent",
+    "posttest": "rm log-*",
+    "coverage": "jest --coverage --silent",
+    "typedoc": "typedoc --out ./docs ./src",
+    "typecover": "type-coverage --detail --ignore-catch",
+    "posttypedoc": "touch ./docs/.nojekyll",
+    "patch": "npm version patch && git push --follow-tags",
+    "minor": "npm version minor && git push --follow-tags",
+    "major": "npm version major && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toxblh/samsung-tv-remote.git"
+  },
+  "keywords": [
+    "TV",
+    "SamsungTV",
+    "2018",
+    "Samsung",
+    "SmartTV",
+    "Remote"
+  ],
+  "author": "Anton Palgunov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toxblh/samsung-tv-remote/issues"
+  },
+  "homepage": "https://github.com/Toxblh/samsung-tv-remote#readme",
+  "dependencies": {
+    "node-ssdp": "^4.0.1",
+    "request": "^2.88.2",
+    "samsung-tv-control": "^1.12.4",
+    "ts-enum-util": "^4.0.2",
+    "type-coverage": "^2.18.0",
+    "wake_on_lan": "^1.0.0",
+    "ws": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.2",
+    "@types/node-ssdp": "^4.0.1",
+    "@types/request": "^2.48.7",
+    "@types/wake_on_lan": "0.0.30",
+    "@types/ws": "^7.4.7",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
+    "tslint": "^6.1.3",
+    "typedoc": "^0.21.6",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "^.+\\.spec\\.ts$"
+  },
+  "typeCoverage": {
+    "atLeast": 70
+  }
+}
